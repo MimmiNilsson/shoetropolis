@@ -25,16 +25,18 @@ function Product() {
     },);
 
   return (
-    <div>
-        <h1>The kind of shoes a Ninja would wear</h1>
-            <article className='sing-prod'>
-                <img alt={product.title} src={product.url} width="40%" />
-                <h3>{product.title}</h3>
-                <p>{product.price}</p>
-                <p>{product.storage}</p>
-                <p>{product.description}</p>
-                <button>Knapp</button>
-            </article>
+    <div className='prod-sing-container'> 
+        <button className='returnBtn'>Back to Products</button>
+        <div className='prod-sing-img'>
+            <img alt={product.title} src={product.url} width="40%" />
+        </div>
+        <div className='prod-sing-info'>
+            <h1>{product.title}</h1>
+            <p>{product.price} SEK</p>
+            <button>Add to Cart</button>
+            <p>In Stock: {product.storage}</p>
+            <p>{product.description}</p>
+        </div>
     </div>
   )
 }
