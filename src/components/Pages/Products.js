@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import ProductsComp from '../ProductsComp';
-import Header from '../Header'
 import './productsPage.css' 
 
 function Products() {
@@ -23,9 +22,7 @@ function Products() {
     },[]);  
     
   return (
-    <div className='test'> 
-     <Header />
-        
+    <div className='test'>    
       <ProductsComp products={products} />
         </div>
 

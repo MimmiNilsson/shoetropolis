@@ -25,7 +25,7 @@ function Header() {
             onChange={handleChange}
             InputProps={{
               endAdornment: (
-                <InputAdornment>
+                <InputAdornment position='start'>
                   <button className="header-search-btn">
                     {" "}
                     <SearchIcon />

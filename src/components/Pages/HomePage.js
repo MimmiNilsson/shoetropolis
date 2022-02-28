@@ -6,7 +6,6 @@ import "./homePage.css";
 function HomePage() {
   return (
     <div>
-      <Header />
       <main className="homepage-container">
         <div className="home-header">
           <h1>Spring is near!</h1>
