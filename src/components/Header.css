@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* .header {
+    background-image: url('https://images.unsplash.com/photo-1581889470536-467bdbe30cd0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2764&q=80');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150px; 
+    box-shadow: 0px 40px 40px 10px  burlywood inset;
+}  */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 10px;
+  background-color: rgb(255, 255, 255);
+  height: 100px;
+  border-bottom: black 2px solid;
+}
+.hover:hover {
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.header-search-btn {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.input-div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 305px;
+}
+.input {
+  width: 280px;
+}
+.label {
+  position: absolute;
+  left: 15px;
+}
