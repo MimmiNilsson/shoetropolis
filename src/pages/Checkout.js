@@ -1,3 +1,7 @@
+//=============================================================================
+/*===== MIMMI: CHECKOUT / CHECKOUT PAGE =====*/
+//=============================================================================
+
 import React from 'react';
 import CheckoutCart from '../components/CheckoutCart';
 import CheckoutForm from '../components/CheckoutForm';

@@ -1,5 +1,8 @@
-import React from 'react'
+//=============================================================================
+/*===== MIMMI: CHECKOUT / ORDER MESSAGE PAGE =====*/
+//=============================================================================
 
+import React from 'react';
 
 function CheckoutMsg() {
     
@@ -11,4 +14,4 @@ function CheckoutMsg() {
   )
 }
 
-export default CheckoutMsg
+export default CheckoutMsg;

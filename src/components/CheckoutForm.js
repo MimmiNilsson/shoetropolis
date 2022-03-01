@@ -1,4 +1,8 @@
-import React, {useState} from 'react'
+//=============================================================================
+/*===== MIMMI: CHECKOUT / ORDER FORM COMPONENT =====*/
+//=============================================================================
+
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 
 function CheckoutForm() {
@@ -25,9 +29,9 @@ function CheckoutForm() {
 
   return (
     <div className='checkout-contaienr'>
-		<div className='checkout-form'>
+		<div className='checkout-form-container'>
 			<h1>Shipping Details</h1>
-			<form>
+			<form className='checkout-form'>
 				<label>First Name</label>
 				<input type="text" name='firstname' value={user.firstname} onChange={handleChange}></input>
 				
