@@ -14,18 +14,18 @@ import CheckoutCart from './components/CheckoutCart';
 
 function App() {
   
-  // const dummyCart = [
-  //   {
-  //     id: 1, 
-  //     title: 'New Shoes'
-  //   },
-  //   {
-  //     id: 2, 
-  //     title: 'New New Shoes'
-  //   }
-  // ]
+  const dummyCart = [
+    {
+      id: 1, 
+      title: 'New Shoes'
+    },
+    {
+      id: 2, 
+      title: 'New New Shoes'
+    }
+  ]
 
-  const [cartItems, setCartItems] = useState([]); 
+  const [cartItems, setCartItems] = useState(dummyCart); 
 
   const handleOnClick = (e) => {
     e.preventDefault();

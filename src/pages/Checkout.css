@@ -1,0 +1,21 @@
+.return-btn {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.add-btn {
+    width: 60%;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.checkout-cart-container {
+    border: 2px solid orange;
+}
+
+.checkout-box {
+    border: 2px solid rebeccapurple;
+}
