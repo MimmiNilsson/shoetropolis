@@ -60,7 +60,7 @@ function App() {
           <Route path='/home' element={<Homepage />}></Route>
           <Route path='/products' element={<Products />}></Route>
           <Route path='/products/:id' element={<Product handleOnClick={handleOnClick} />}></Route>
-          <Route path='/cart' element={<Checkout addToCart={addToCart} cartItes={cartItems} />}></Route>
+          {/* <Route path='/cart' element={<Checkout addToCart={addToCart} cartItes={cartItems} />}></Route> */}
           <Route path='/checkout' element={<CheckoutCart addToCart={addToCart} cartItems={cartItems} />}></Route>
           {/* <Route path='/checkout' element={<CartItems addToCart={addToCart} cartItem={cartItem} />}></Route>                                */}
           <Route path='/checkoutmsg' element={<CheckoutMsg />}></Route>
