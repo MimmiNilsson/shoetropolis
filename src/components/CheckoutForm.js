@@ -61,7 +61,7 @@ function CheckoutForm() {
 				<label>Comment</label>
 				<textarea name="comment" value={user.comment} onChange={handleChange}></textarea>
 
-				<Link to='/checkoutmsg'><button>Proceed to Checkout</button></Link>
+				<Link to='/checkoutmsg'><button>Place Order</button></Link>
 				<h2>{JSON.stringify(user)}</h2>
 			</form>
 		</div>

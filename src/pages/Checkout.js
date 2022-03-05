@@ -6,7 +6,7 @@ import React from 'react';
 import CheckoutCart from '../components/CheckoutCart';
 import CheckoutForm from '../components/CheckoutForm';
 
-function Checkout() {
+function Checkout(props) {
   return (
 	  <div>
 		<CheckoutCart />

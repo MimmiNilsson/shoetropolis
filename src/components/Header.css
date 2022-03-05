@@ -1,0 +1,45 @@
+.store-name {
+    color: #fff;
+    text-shadow: #eee 1px 0 10px;
+    font-size: 2rem;
+    margin: .5rem; 
+}
+
+.navbar {
+    background-color: #ffd700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+    margin-bottom: 1rem;
+    padding: 0 3rem 0 3rem;
+    z-index: 45; 
+}
+
+.navbar-links {
+    height: 100%; 
+}
+  
+.menu-list {
+    display: flex; 
+    list-style: none;
+}
+
+.nav-item {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem; 
+    font-size: 1.2rem;
+}
+
+.nav-item:hover {
+    background-color: #ffdf32; 
+    color: black;
+    font-size: 1.3rem;
+    border-radius: 2px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+

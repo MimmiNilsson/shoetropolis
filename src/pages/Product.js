@@ -3,9 +3,11 @@
 //=============================================================================
 
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
+import {RiArrowGoBackLine} from 'react-icons/ri';
+import './Product.css';
 
-function Product() {
+function Product(props) {
     const params = useParams();
     const [product, setProduct] = useState({}); 
     
@@ -29,17 +31,19 @@ function Product() {
     },);
 
   return (
-    <div className='prod-sing-container'> 
-        <button className='returnBtn'>Back to Products</button>
-        <div className='prod-sing-img'>
-            <img alt={product.title} src={product.url} width="40%" />
-        </div>
-        <div className='prod-sing-info'>
-            <h1>{product.title}</h1>
-            <p>{product.price} SEK</p>
-            <button>Add to Cart</button>
-            <p>In Stock: {product.storage}</p>
-            <p>{product.description}</p>
+    <div> 
+        <Link to='/products'><button className='sing-prod-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
+        <div className='sing-prod-container'>
+            <div className='sing-prod-img box box-1'>
+                <img className='prod-img' alt={product.title} src={product.url}/>
+            </div>
+            <div className='sing-prod-info box box-2'>
+                <h1 className='sing-prod-h1'>{product.title}</h1>
+                <p className='sing-prod-p'>{product.price} SEK</p>
+                <button className='sing-prod-btn add-btn' onClick={props.handleOnClick}>Add to Cart</button>
+                <p className='sing-prod-p'>In Stock: {product.storage}</p>
+                <p className='sing-prod-p'>{product.description}</p>
+            </div>
         </div>
     </div>
   )
