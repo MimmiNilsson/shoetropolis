@@ -35,16 +35,42 @@ function Product(props) {
     <div> 
         <Link to='/products'><button className='sing-prod-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
         <div className='sing-prod-container'>
-            <motion.div className='sing-prod-img box box-1'>
+            <motion.div 
+                initial={{
+                    x:'-100vw'
+                }}
+                animate={{
+                    x: '0'
+                }}
+                transition={{
+                    type: 'spring', 
+                    duration: 1, 
+                    speed: 0.25,
+                    bounce: 0.25
+                }}
+            className='sing-prod-img box box-1'>
                 <img className='prod-img' alt={product.title} src={product.url}/>
             </motion.div>
-            <div className='sing-prod-info box box-2'>
-                <h1 className='sing-prod-h1'>{product.title}</h1>
-                <p className='sing-prod-p'>{product.price} SEK</p>
-                <button className='sing-prod-btn add-btn' onClick={props.handleOnClick}>Add to Cart</button>
-                <p className='sing-prod-p'>In Stock: {product.storage}</p>
-                <p className='sing-prod-p'>{product.description}</p>
-            </div>
+            <motion.div 
+                initial={{
+                    x:'100vw'
+                }}
+                animate={{
+                    x: '0'
+                }}
+                transition={{
+                    type: 'spring', 
+                    duration: 1, 
+                    speed: 0.25,
+                    bounce: 0.25
+                }}
+                className='sing-prod-info box box-2'>
+                    <h1 className='sing-prod-h1'>{product.title}</h1>
+                    <p className='sing-prod-p'>{product.price} SEK</p>
+                    <button className='sing-prod-btn add-btn' onClick={props.handleOnClick}>Add to Cart</button>
+                    <p className='sing-prod-p'>In Stock: {product.storage}</p>
+                    <p className='sing-prod-p'>{product.description}</p>
+            </motion.div>
         </div>
     </div>
   )

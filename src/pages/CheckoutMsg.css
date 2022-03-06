@@ -1,0 +1,14 @@
+.checkout-msg-container {
+    border: 2px solid yellowgreen;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    padding: 5%;
+}
+
+.checkout-msg-wrap {
+    border: 2px soil orange;
+    align-items: center;
+}

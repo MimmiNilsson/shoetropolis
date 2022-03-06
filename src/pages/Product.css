@@ -10,7 +10,6 @@
     font-size: 0.9rem;
     font-family: 'Montserrat', sans-serif;
     padding: 5%;
-    border: 2px solid green;
 }
 
 .sing-prod-h1 {
@@ -46,6 +45,45 @@
     font-size: 1rem;
 }
 
+.add-btn {
+    width: 60%;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 0;
+    background-color: #c4c4c4;
+    color: #fff;
+    box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.12), 
+    0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.return-btn {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    background-color: #c4c4c4;
+    color: #fff;
+    text-transform: uppercase;
+    border: 0;
+    font-size: 1rem;
+    margin: 10px 0 30px;
+    padding: 10px;
+    box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.12), 
+    0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.add-btn:hover, .return-btn:hover {
+    background-color: #dedede;
+    color: black;
+}
+
+.add-btn:focus, .return-btn:focus {
+    background-color: #c4c4c4; 
+    color: white;
+}
+
 .return-btn {
     width: 100%;
     padding: 10px;
@@ -53,11 +91,8 @@
     text-transform: uppercase;
 }
 
-.add-btn {
-    width: 60%;
-    padding: 5px;
-    cursor: pointer;
-    text-transform: uppercase;
-}
+
+
+
 
 
