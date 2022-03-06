@@ -8,22 +8,29 @@ import Product from './pages/Product';
 import Checkout from './pages/Checkout';
 import Footer from './components/Footer';
 import CheckoutMsg from './pages/CheckoutMsg';
-import CheckoutCart from './components/CheckoutCart';
+// import CheckoutCart from './components/CheckoutCart';
 // import CheckoutCart from './components/CheckoutCart';
 // import CartItems from './components/CartItems';
 
 function App() {
-  
+
   const dummyCart = [
     {
-      id: 1, 
-      title: 'New Shoes'
-    },
+			image: 'url',
+			title: 'Blue Summer Shoes',
+			price: '499 SEK'
+		}, 
+		{
+			image: 'url',
+			title: 'Nice Nikes',
+			price: '900 SEK'
+		},
     {
-      id: 2, 
-      title: 'New New Shoes'
-    }
-  ]
+			image: 'url',
+			title: 'Funky Shoes',
+			price: '3990 SEK'
+		}
+  ];
 
   const [cartItems, setCartItems] = useState(dummyCart); 
 
@@ -40,7 +47,7 @@ function App() {
           newItem
         ])
 
-        console.log('hej');
+        console.log('ADD TO CART-knappen');
   }
 
 
@@ -57,13 +64,12 @@ function App() {
         <BrowserRouter>
         <Header />
           <Routes>
-          <Route path='/home' element={<Homepage />}></Route>
-          <Route path='/products' element={<Products />}></Route>
-          <Route path='/products/:id' element={<Product handleOnClick={handleOnClick} />}></Route>
-          {/* <Route path='/cart' element={<Checkout addToCart={addToCart} cartItes={cartItems} />}></Route> */}
-          <Route path='/checkout' element={<CheckoutCart addToCart={addToCart} cartItems={cartItems} />}></Route>
-          {/* <Route path='/checkout' element={<CartItems addToCart={addToCart} cartItem={cartItem} />}></Route>                                */}
-          <Route path='/checkoutmsg' element={<CheckoutMsg />}></Route>
+            <Route path='/home' element={<Homepage />}></Route>
+            <Route path='/products' element={<Products />}></Route>
+            <Route path='/products/:id' element={<Product handleOnClick={handleOnClick} />}></Route>
+            <Route path='/checkout' element={<Checkout addToCart={addToCart} cartItems={cartItems}/>}></Route>
+            {/* <Route path='/checkout' element={<CheckoutCart addToCart={addToCart} cartItems={cartItems} />}></Route> */}
+            <Route path='/checkoutmsg' element={<CheckoutMsg />}></Route>
           </Routes>
         </BrowserRouter>
       </div>

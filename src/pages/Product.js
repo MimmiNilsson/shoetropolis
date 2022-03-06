@@ -5,6 +5,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import {RiArrowGoBackLine} from 'react-icons/ri';
+import {motion} from 'framer-motion';
 import './Product.css';
 
 function Product(props) {
@@ -34,9 +35,9 @@ function Product(props) {
     <div> 
         <Link to='/products'><button className='sing-prod-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
         <div className='sing-prod-container'>
-            <div className='sing-prod-img box box-1'>
+            <motion.div className='sing-prod-img box box-1'>
                 <img className='prod-img' alt={product.title} src={product.url}/>
-            </div>
+            </motion.div>
             <div className='sing-prod-info box box-2'>
                 <h1 className='sing-prod-h1'>{product.title}</h1>
                 <p className='sing-prod-p'>{product.price} SEK</p>
