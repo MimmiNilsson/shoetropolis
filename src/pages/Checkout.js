@@ -45,10 +45,6 @@ function Checkout(props) {
 	}
 
   return (
-	//   <div>
-	// 	<CheckoutCart addToCart={addToCart} cartItems={cartItems}/>
-	// 	<CheckoutForm />
-	//   </div>
 	<div>
 		<Link to='/products'><button className='checkout-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
 		<div className='checkout-container'>
@@ -85,7 +81,7 @@ function Checkout(props) {
 							{props.cartItems.map(item => <button className='remove-btn'>Remove</button>)}
 						</td>
 					</tr>
-					<tfoot>Total Price: {props.price} SEK </tfoot>
+					<tfoot>Total Price: {props.sum} SEK </tfoot>
 				</table>
 			</div>
 			{/* CHECKOUT FORM */}

@@ -32,20 +32,22 @@ function App() {
 		}
   ];
 
-  const [cartItems, setCartItems] = useState(dummyCart); 
+  const [cartItems, setCartItems] = useState([]); 
 
-  const handleOnClick = (e) => {
-    e.preventDefault();
+  const [sum, setSum] = useState(0);
 
-    const newItem = {
-      id: '',
-      title: ''
-    }
+  const handleOnClick = (product) => {
+    addToCart(product);
 
-    setCartItems([
-          ...cartItems, 
-          newItem
-        ])
+    // const newItem = {
+    //   id: '',
+    //   title: ''
+    // }
+
+    // setCartItems([
+    //       ...cartItems, 
+    //       newItem
+    //     ])
 
         console.log('ADD TO CART-knappen');
   }
@@ -65,9 +67,9 @@ function App() {
         <Header />
           <Routes>
             <Route path='/home' element={<Homepage />}></Route>
-            <Route path='/products' element={<Products />}></Route>
+            <Route path='/products' element={<Products addToCart={addToCart}/>}></Route>
             <Route path='/products/:id' element={<Product handleOnClick={handleOnClick} />}></Route>
-            <Route path='/checkout' element={<Checkout addToCart={addToCart} cartItems={cartItems}/>}></Route>
+            <Route path='/checkout' element={<Checkout addToCart={addToCart} cartItems={cartItems} sum={sum}/>}></Route>
             {/* <Route path='/checkout' element={<CheckoutCart addToCart={addToCart} cartItems={cartItems} />}></Route> */}
             <Route path='/checkoutmsg' element={<CheckoutMsg />}></Route>
           </Routes>

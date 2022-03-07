@@ -8,7 +8,7 @@ import {RiArrowGoBackLine} from 'react-icons/ri';
 import {motion} from 'framer-motion';
 import './Product.css';
 
-function Product(props) {
+function Product({cartItems, sum, handleOnClick, addToCart}) {
     const params = useParams();
     const [product, setProduct] = useState({}); 
     
@@ -67,7 +67,7 @@ function Product(props) {
                 className='sing-prod-info box box-2'>
                     <h1 className='sing-prod-h1'>{product.title}</h1>
                     <p className='sing-prod-p'>{product.price} SEK</p>
-                    <button className='sing-prod-btn add-btn' onClick={props.handleOnClick}>Add to Cart</button>
+                    <button className='sing-prod-btn add-btn' onClick={handleOnClick}>Add to Cart</button>
                     <p className='sing-prod-p'>In Stock: {product.storage}</p>
                     <p className='sing-prod-p'>{product.description}</p>
             </motion.div>
