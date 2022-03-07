@@ -5,16 +5,24 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {RiArrowGoBackLine} from 'react-icons/ri';
-import './Checkout.css'
-// import Product from './Product';
-// import CheckoutCart from '../components/CheckoutCart';
-// import CheckoutForm from '../components/CheckoutForm';
+import './Checkout.css';
 
 
 function Checkout(props) {
 	//==========CHECKOUT CART==========
-	console.log(props);
 	// FROM CART?!
+	// const handleAddBtn = () => {
+    //     const newItem = 
+    //     {
+    //         image: props.product.url, 
+    //         title: props.product.title, 
+    //         price: props.product.price, 
+    //         qty: 'qty'
+    //     }
+            
+    //     props.addToCart(newItem);
+    // }
+	// console.log(props.item);
 	
 	const [count, setCount] = useState(0);
    
@@ -58,12 +66,8 @@ function Checkout(props) {
 					<h1 className='checkout-h1'>Cart Items</h1>
 					<p className='checkout-p'>Your shopping cart is currently empty. Let's put our best foot forward and find it some friends!</p>
 				</div>
+				
 				{/* CHECKOUT NOT EMPTY CART */}
-				{/* <div>
-					{props.cartItems.map(i =>(
-						<td>{i.title}</td>
-					))}
-				</div> */}
 				<table className='checkout-table'>
 					<thead className='checkout-table-head'>
 						<h1 className='checkout-h1'>Products</h1>
@@ -71,10 +75,10 @@ function Checkout(props) {
 					<tbody>
 						<tr className='checkout-table-row'>
 							<td className='checkout-table-cell'>
-								{props.cartItems.map(item => <p>{props.product.image}</p>)}
+								{props.cartItems.map(item => <p>{item.image}</p>)}
 							</td>
 							<td>
-								{props.cartItems.map(item => <p>{props.product.title}</p>)}
+								{props.cartItems.map(item => <p>{item.title}</p>)}
 							</td>
 							<td>
 								{props.cartItems.map(item =>
@@ -85,7 +89,7 @@ function Checkout(props) {
 									)}
 							</td>
 							<td>
-								{props.cartItems.map(item =>  <p>{props.product.price}</p>)}
+								{props.cartItems.map(item =>  <p>{item.price}</p>)}
 							</td>
 							<td>
 								{props.cartItems.map(item => <button className='remove-btn'>Remove</button>)}

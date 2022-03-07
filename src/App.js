@@ -50,7 +50,6 @@ function App() {
             <Route path='/products' element={<Products addToCart={addToCart}/>}></Route>
             <Route path='/products/:id' element={<Product addToCart={addToCart} cartItems={cartItems}/>}></Route>
             <Route path='/checkout' element={<Checkout addToCart={addToCart} cartItems={cartItems} />}></Route>
-            {/* <Route path='/checkout' element={<CheckoutCart addToCart={addToCart} cartItems={cartItems} />}></Route> */}
             <Route path='/checkoutmsg' element={<CheckoutMsg />}></Route>
           </Routes>
         </BrowserRouter>

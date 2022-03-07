@@ -5,23 +5,6 @@ function Products(props) {
 
     const [products, setProducts] = useState([]); 
 
-    // const handleOnClick = (product) => {
-    //   addToCart(product);
-
-    //   const newItem = {
-    //     id: '',
-    //     title: ''
-    //   }
-  
-    //   setCartItems([
-    //         ...cartItems, 
-    //         newItem
-    //       ])
-  
-    //       console.log('ADD TO CART-knappen');
-    // }
-  
-
     const fetchData = async () => {
         try{
 
@@ -55,8 +38,6 @@ function Products(props) {
 			))
       }
     </div>
-
-// onClick={() => {handleOnClick(product)}}
 
   )
 }

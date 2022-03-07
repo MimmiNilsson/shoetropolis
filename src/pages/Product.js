@@ -45,6 +45,7 @@ function Product(props) {
   return (
     <div> 
         <Link to='/products'><button className='sing-prod-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
+        <Link to='/checkout'><button className='sing-prod-btn return-btn'>CHECKOUT</button></Link>
         <div className='sing-prod-container'>
             <motion.div 
                 initial={{
