@@ -1,3 +1,4 @@
+/*==========CHECKOUT CART==========*/
 .checkout-container {
     display: flex;
     flex-flow: row wrap;
@@ -17,6 +18,7 @@
     margin-bottom: 2rem;
 }
 
+
 .checkout-aside-form {
     width: 40%;
     padding: 0.75rem 2rem 2rem 2rem;
@@ -27,8 +29,59 @@
 .checkout-table {
     border: 2px solid brown;
     width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
 }
 
+.checkout-table-cell {
+    border: 2px solid green;
+    width: 40%;
+}
+
+
+
+
+
+
+
+/* 
+.checkout-table-body {
+    background-color: yellowgreen;
+    width: 100%;
+}
+
+.checkout-table-cell {
+    width: 30%;
+}
+
+.table-img {
+   border: 2px solid black;
+}
+
+.table-col {
+    border: 2px solid blue;
+}
+
+
+.checkout-table-foot {
+    border: 2px solid maroon;
+    padding: 1rem;
+    border-top: 2px solid #dedede;
+} */
+
+
+
+.decrement-btn, .increment-btn {
+    border: 2px solid ;
+}
+
+
+
+
+
+/*==========CHECKOUT CART==========*/
 .checkout-form-input[type='text'], .checkout-form-input[type='select'], textarea {
     display: block;
     width: 90%;

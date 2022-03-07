@@ -10,20 +10,6 @@ import './Checkout.css';
 
 function Checkout(props) {
 	//==========CHECKOUT CART==========
-	// FROM CART?!
-	// const handleAddBtn = () => {
-    //     const newItem = 
-    //     {
-    //         image: props.product.url, 
-    //         title: props.product.title, 
-    //         price: props.product.price, 
-    //         qty: 'qty'
-    //     }
-            
-    //     props.addToCart(newItem);
-    // }
-	// console.log(props.item);
-	
 	const [count, setCount] = useState(0);
    
     function decrementCount() {
@@ -68,36 +54,56 @@ function Checkout(props) {
 				</div>
 				
 				{/* CHECKOUT NOT EMPTY CART */}
-				<table className='checkout-table'>
-					<thead className='checkout-table-head'>
-						<h1 className='checkout-h1'>Products</h1>
-					</thead>
-					<tbody>
+				<div className='checkout-cart-container'>
+					<h1 className='checkout-h1'>Products</h1>
+					{props.cartItems.map(item => 
+					<table className='checkout-table'>
 						<tr className='checkout-table-row'>
+							<td className='checkout-table-cell table-img'><img src={item.image} alt={item.title} width='20%'/></td>
+							<td className='checkout-table-cell'><p>{item.title}</p></td>
 							<td className='checkout-table-cell'>
-								{props.cartItems.map(item => <p>{item.image}</p>)}
+								<button onClick={decrementCount}>-</button>
+								{count}
+								<button onClick={incrementCount}>+</button>
 							</td>
-							<td>
+							<td className='checkout-table-cell'><p>{item.price} SEK</p></td>
+							<tfoot className='checkout-table-foot'>Total Price: {props.sum} SEK</tfoot>
+						</tr>
+					</table>
+					)}
+				</div>
+
+				{/* <h1 className='checkout-h1'>Products</h1>
+				<table className='checkout-table'>
+					<tbody className='checkout-table-body'>
+						<tr className='checkout-table-row'>
+							<td className='checkout-table-cell table-img table-col'>
+								{props.cartItems.map(item => 
+								<div><img src={item.image} alt={item.title} width='100%'/></div>
+								)}
+							</td>
+							<td className='checkout-table-cell table-col'>
 								{props.cartItems.map(item => <p>{item.title}</p>)}
 							</td>
-							<td>
+							<td className='checkout-table-cell table-col'>
 								{props.cartItems.map(item =>
-									<div>
-										<button onClick={decrementCount}>-</button>
-										<button onClick={incrementCount}>+</button>
-									</div>
-									)}
+								<div>
+									<button onClick={decrementCount}>-</button>
+									{count}
+									<button onClick={incrementCount}>+</button>
+								</div>
+								)}
 							</td>
-							<td>
-								{props.cartItems.map(item =>  <p>{item.price}</p>)}
+							<td className='checkout-table-cell table-col'>
+								{props.cartItems.map(item =>  <p>{item.price} SEK</p>)}
 							</td>
-							<td>
+							<td className='checkout-table-cell table-col'>
 								{props.cartItems.map(item => <button className='remove-btn'>Remove</button>)}
 							</td>
 						</tr>
 					</tbody>
-					<tfoot>Total Price: {props.sum} SEK </tfoot>
-				</table>
+					<tfoot className='checkout-table-foot'>Total Price: {props.sum} SEK</tfoot>
+				</table> */}
 			</div>
 			{/* CHECKOUT FORM */}
 			<div className='checkout-aside-form'>
