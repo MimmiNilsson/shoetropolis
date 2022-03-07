@@ -8,12 +8,12 @@ import {RiArrowGoBackLine} from 'react-icons/ri';
 import {motion} from 'framer-motion';
 import './Product.css';
 
-function Product({cartItems, sum, handleOnClick, addToCart}) {
+function Product(props) {
+    //==========SINGLE PROD PAGE / API==========
     const params = useParams();
     const [product, setProduct] = useState({}); 
-    
+
     const fetchData = async () => {
-        
       try{
             const response = await fetch('https://codexplained.se/shoes.php?id=' + params.id); 
             const data = await response.json(); 
@@ -23,13 +23,24 @@ function Product({cartItems, sum, handleOnClick, addToCart}) {
         } catch(error) {
             console.log(error);
         }
-
-       
-    } 
+    };
 
     useEffect(()=> {
         fetchData();
     },);
+
+    //==========HANDLE ADD TO CART BTN==========
+    const handleAddBtn = () => {
+        const newItem = 
+        {
+            image: product.url, 
+            title: product.title, 
+            price: product.price, 
+            qty: 'qty'
+        }
+            
+        props.addToCart(newItem);
+    }
 
   return (
     <div> 
@@ -67,13 +78,18 @@ function Product({cartItems, sum, handleOnClick, addToCart}) {
                 className='sing-prod-info box box-2'>
                     <h1 className='sing-prod-h1'>{product.title}</h1>
                     <p className='sing-prod-p'>{product.price} SEK</p>
-                    <button className='sing-prod-btn add-btn' onClick={handleOnClick}>Add to Cart</button>
+                    <button className='sing-prod-btn add-btn' onClick={handleAddBtn}>Add to Cart</button>
                     <p className='sing-prod-p'>In Stock: {product.storage}</p>
                     <p className='sing-prod-p'>{product.description}</p>
+                    
             </motion.div>
         </div>
     </div>
   )
 }
+
+// {cartItems, sum, handleOnClick, addToCart}
+
+
 
 export default Product;

@@ -6,12 +6,16 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {RiArrowGoBackLine} from 'react-icons/ri';
 import './Checkout.css'
+// import Product from './Product';
 // import CheckoutCart from '../components/CheckoutCart';
 // import CheckoutForm from '../components/CheckoutForm';
 
 
 function Checkout(props) {
 	//==========CHECKOUT CART==========
+	console.log(props);
+	// FROM CART?!
+	
 	const [count, setCount] = useState(0);
    
     function decrementCount() {
@@ -55,32 +59,39 @@ function Checkout(props) {
 					<p className='checkout-p'>Your shopping cart is currently empty. Let's put our best foot forward and find it some friends!</p>
 				</div>
 				{/* CHECKOUT NOT EMPTY CART */}
+				{/* <div>
+					{props.cartItems.map(i =>(
+						<td>{i.title}</td>
+					))}
+				</div> */}
 				<table className='checkout-table'>
 					<thead className='checkout-table-head'>
 						<h1 className='checkout-h1'>Products</h1>
 					</thead>
-					<tr className='checkout-table-row'>
-						<td className='checkout-table-cell'>
-							{props.cartItems.map(item => <p>{item.image}</p>)}
-						</td>
-						<td>
-							{props.cartItems.map(item => <p>{item.title}</p>)}
-						</td>
-						<td>
-							{props.cartItems.map(item =>
-								<div>
-									<button onClick={decrementCount}>-</button>
-									<button onClick={incrementCount}>+</button>
-								</div>
-								)}
-						</td>
-						<td>
-							{props.cartItems.map(item =>  <p>{item.price}</p>)}
-						</td>
-						<td>
-							{props.cartItems.map(item => <button className='remove-btn'>Remove</button>)}
-						</td>
-					</tr>
+					<tbody>
+						<tr className='checkout-table-row'>
+							<td className='checkout-table-cell'>
+								{props.cartItems.map(item => <p>{props.product.image}</p>)}
+							</td>
+							<td>
+								{props.cartItems.map(item => <p>{props.product.title}</p>)}
+							</td>
+							<td>
+								{props.cartItems.map(item =>
+									<div>
+										<button onClick={decrementCount}>-</button>
+										<button onClick={incrementCount}>+</button>
+									</div>
+									)}
+							</td>
+							<td>
+								{props.cartItems.map(item =>  <p>{props.product.price}</p>)}
+							</td>
+							<td>
+								{props.cartItems.map(item => <button className='remove-btn'>Remove</button>)}
+							</td>
+						</tr>
+					</tbody>
 					<tfoot>Total Price: {props.sum} SEK </tfoot>
 				</table>
 			</div>
