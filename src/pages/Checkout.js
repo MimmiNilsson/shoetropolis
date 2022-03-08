@@ -2,10 +2,9 @@
 /*===== MIMMI: CHECKOUT / CHECKOUT (CART AND FORM) PAGE =====*/
 //=============================================================================
 
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {RiArrowGoBackLine} from 'react-icons/ri';
-import {useContext} from 'react'
 import {AppContext} from '../App';
 import './Checkout.css';
 

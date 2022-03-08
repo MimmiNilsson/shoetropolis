@@ -20,6 +20,7 @@
 
 .checkout-empty {
     border: 2px solid orange;
+
 }
 
 
@@ -37,7 +38,7 @@
 }
 
 .cart-box {
-    border: 2px solid green;
+    border: 2px dashed #fffbe5;
     flex: 1;
     text-align: center;
    
