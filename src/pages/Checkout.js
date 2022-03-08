@@ -5,6 +5,8 @@
 import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {RiArrowGoBackLine} from 'react-icons/ri';
+import {TiDelete} from 'react-icons/ti'
+import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai'
 import {AppContext} from '../App';
 import './Checkout.css';
 
@@ -68,7 +70,7 @@ function Checkout(props) {
 				<div>
 					<Link to='/products'><button className='checkout-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
 					<div className='checkout-cart-container'>
-					<h1>Products</h1>
+					<h1 className='checkout-h1 not-empty-cart-h1'>Products</h1>
 					{cartItems.map(item => 
 					<div className='cart-wrapper' key={item.id}>
 						<div className='cart-box box-1'>
@@ -81,16 +83,16 @@ function Checkout(props) {
 							<p>{item.price} SEK</p>
 						</div>
 						<div className='cart-box box-4'>
-							<button onClick={decrementCount}>-</button>
+							<button className='checkout-cart-qty-btn minus' onClick={decrementCount}><AiOutlineMinus /></button>
 							{count}
-							<button onClick={incrementCount}>+</button>
+							<button className='checkout-cart-qty-btn plus' onClick={incrementCount}><AiOutlinePlus /></button>
 						</div>
 						<div className='cart-box box-4'>
-							<button className='remove-btn' onClick={() => deleteCartItem(item)}>Remove</button>
+							<button className='checkout-cart-remove-btn' onClick={() => deleteCartItem(item)}><TiDelete /></button>
 						</div>
 					</div> 
 					)}
-					<p>Total Price: {props.checkoutTotal} SEK</p>
+					<p className='checkout-cart-footer'>Total price: {props.checkoutTotal} SEK</p>
 				</div>
 				</div>
 				}	
@@ -128,10 +130,9 @@ function Checkout(props) {
 					
 					<label className='checkout-form-label'>Comment</label>
 					<textarea className='checkout-form-input textarea-input' name="comment" value={user.comment} onChange={handleChange}></textarea>
-
-					<Link to='/checkoutmsg'><button className='order-btn'>Place Order</button></Link>
 					{/* <h2>{JSON.stringify(user)}</h2> */}
 				</form>
+				<Link to='/checkoutmsg'><button className='checkout-order-btn'>Place Order</button></Link>
 			</div>
 		</div>
 	</div>
