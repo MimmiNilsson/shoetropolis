@@ -30,7 +30,6 @@ function Checkout(props) {
 		setCartItems(filtered);
 	  }
 
-	
 	//==========CHECKOUT FORM==========
 	const [user, setUser] = useState({
 		firstname: '',
@@ -55,18 +54,20 @@ function Checkout(props) {
 
   return (
 	<div>
-		<Link to='/products'><button className='checkout-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
 		<div className='checkout-container'>
 			<div className='checkout-main-cart'>
 				{/* CHECKOUT EMPTY CART */} {/* CHECKOUT NOT EMPTY CART */}
 				{cartItems.length < 1 
 				?
 				<div className='checkout-empty'>
-					<h1 className='checkout-h1'>Cart Items</h1>
-					<p className='checkout-p'>Your shopping cart is currently empty. Let's put our best foot forward and find it some friends!</p>
+					<h1 className='checkout-h1 empty-cart-h1'>Cart Items</h1>
+					<p className='checkout-p empty-cart-p'>Your shopping cart is currently empty. Let's put our best foot forward and find it some friends!</p>
+					<Link to='/products'><button className='empty-cart-return-btn'>Back to Products</button></Link>
 				</div>
 				:
-				<div className='checkout-cart-container'>
+				<div>
+					<Link to='/products'><button className='checkout-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
+					<div className='checkout-cart-container'>
 					<h1>Products</h1>
 					{cartItems.map(item => 
 					<div className='cart-wrapper' key={item.id}>
@@ -90,6 +91,7 @@ function Checkout(props) {
 					</div> 
 					)}
 					<p>Total Price: {props.checkoutTotal} SEK</p>
+				</div>
 				</div>
 				}	
 			</div>
