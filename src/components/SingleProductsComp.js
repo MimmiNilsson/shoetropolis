@@ -5,7 +5,13 @@ function SingleProductsComp({prod, addToCart}) {
 
 const handleClick = (e) => {
   e.preventDefault(); 
-  const newItem = {title: prod.title, price: prod.price, img:prod.url, id: prod.id, desc: prod.description}             
+  const newItem = 
+  {title: prod.title, 
+    price: prod.price, 
+    img:prod.url, 
+    id: Math.random() * 1000000,
+            // id: prod.id, ACTUAL ID BUT NEED TO GROUP IF > 1
+    desc: prod.description}             
   addToCart(newItem)
 } 
 
