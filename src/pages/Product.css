@@ -23,6 +23,12 @@
     /* margin: 5px; */
 }
 
+.sing-prod-input {
+    /* border: none; */
+    /* box-shadow: 0 5px 5px -5px #333; */
+    height: 1.2rem;
+}
+
 .box {
     width: 50%;
     padding: 1rem;

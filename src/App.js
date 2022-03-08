@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState, createContext} from 'react';
 import {BrowserRouter, Routes, Route,} from "react-router-dom";
 import Header from './components/Header';
 import Homepage from './pages/Homepage';
@@ -9,29 +9,13 @@ import Checkout from './pages/Checkout';
 import Footer from './components/Footer';
 import CheckoutMsg from './pages/CheckoutMsg';
 
+export const AppContext = createContext();
+
 function App() {
 
-  // const dummyCart = [
-  //   {
-	// 		image: 'url',
-	// 		title: 'Blue Summer Shoes',
-	// 		price: '499 SEK'
-	// 	}, 
-	// 	{
-	// 		image: 'url',
-	// 		title: 'Nice Nikes',
-	// 		price: '900 SEK'
-	// 	},
-  //   {
-	// 		image: 'url',
-	// 		title: 'Funky Shoes',
-	// 		price: '3990 SEK'
-	// 	}
-  // ];
-
-  const [cartItems, setCartItems] = useState([]); 
-  // const [sum, setSum] = useState(0);
-
+  //==========CART / ADD ITEMS==========
+  const [cartItems, setCartItems] = useState([]);
+  
   const addToCart = (newItem) => {
     console.log(newItem)
     setCartItems([
@@ -39,8 +23,27 @@ function App() {
       newItem
     ])
   }
-                      
-  return (                   
+
+  //==========(CHECKOUT) / TOTAL SUM==========
+  const [checkoutTotal, setCheckoutTotal] = useState(0);
+  
+  const total = () => {
+    let totalValue = 0;
+    for (let i = 0; i < cartItems.length; i++) {
+      totalValue += cartItems[i].price; 
+    }
+    setCheckoutTotal(totalValue);
+  }
+
+  useEffect(() => {
+    total();
+  }, [cartItems]);
+                
+  return (     
+    <AppContext.Provider value = {{
+      setCartItems,
+      cartItems
+    }}>            
     <div className="page-container">  
       <div className='content-wrap'>
         <BrowserRouter>
@@ -49,18 +52,15 @@ function App() {
             <Route path='/home' element={<Homepage cartItems={cartItems}/>}></Route>
             <Route path='/products' element={<Products addToCart={addToCart}/>}></Route>
             <Route path='/products/:id' element={<Product addToCart={addToCart} cartItems={cartItems}/>}></Route>
-            <Route path='/checkout' element={<Checkout addToCart={addToCart} cartItems={cartItems} />}></Route>
+            <Route path='/checkout' element={<Checkout setCartItems={setCartItems} addToCart={addToCart} cartItems={cartItems} checkoutTotal={checkoutTotal} />}></Route>
             <Route path='/checkoutmsg' element={<CheckoutMsg />}></Route>
           </Routes>
         </BrowserRouter>
       </div>
       <Footer />
     </div>
+    </AppContext.Provider>  
   );
 }
 
 export default App;
-
-
-// const handleOnClickAdd = (cartItem) => {
-//   addToCart(cartItem);

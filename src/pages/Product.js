@@ -33,6 +33,8 @@ function Product(props) {
     const handleAddBtn = () => {
         const newItem = 
         {
+            id: Math.random() * 1000000,
+            // id: product.id,
             image: product.url, 
             title: product.title, 
             price: product.price, 
@@ -42,11 +44,20 @@ function Product(props) {
         props.addToCart(newItem);
     }
 
+     //==========Qty==========
+     const [quantity, setQuantity] = useState(undefined)
+     const updateProduct = (product) => {
+         product = Object.assign(
+             {},
+             {...product}, 
+             {quantity: quantity + 1})
+     }
+
   return (
     <div> 
         <Link to='/products'><button className='sing-prod-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
         <Link to='/checkout'><button className='sing-prod-btn return-btn'>CHECKOUT</button></Link>
-        <div className='sing-prod-container'>
+        <div className='sing-prod-container' key={product.id}>
             <motion.div 
                 initial={{
                     x:'-100vw'
@@ -79,6 +90,7 @@ function Product(props) {
                 className='sing-prod-info box box-2'>
                     <h1 className='sing-prod-h1'>{product.title}</h1>
                     <p className='sing-prod-p'>{product.price} SEK</p>
+                    <p className='sing-prod-p'>Qty: <input className='sing-prod-input' type='number'></input></p>
                     <button className='sing-prod-btn add-btn' onClick={handleAddBtn}>Add to Cart</button>
                     <p className='sing-prod-p'>In Stock: {product.storage}</p>
                     <p className='sing-prod-p'>{product.description}</p>

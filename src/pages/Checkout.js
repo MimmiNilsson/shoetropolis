@@ -5,10 +5,15 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {RiArrowGoBackLine} from 'react-icons/ri';
+import {useContext} from 'react'
+import {AppContext} from '../App';
 import './Checkout.css';
 
 
 function Checkout(props) {
+
+	const {setCartItems, cartItems} = useContext(AppContext)
+
 	//==========CHECKOUT CART==========
 	const [count, setCount] = useState(0);
    
@@ -20,6 +25,13 @@ function Checkout(props) {
         setCount(prevCount => prevCount +1)
     }
 
+	 //==========CHECKOUT / DELETE==========
+	 const deleteCartItem = (item) => {
+		let filtered = cartItems.filter(c => c.id !== item.id);
+		setCartItems(filtered);
+	  }
+
+	
 	//==========CHECKOUT FORM==========
 	const [user, setUser] = useState({
 		firstname: '',
@@ -47,64 +59,42 @@ function Checkout(props) {
 		<Link to='/products'><button className='checkout-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
 		<div className='checkout-container'>
 			<div className='checkout-main-cart'>
-				{/* CHECKOUT EMPTY CART */}
+				{/* CHECKOUT EMPTY CART */} {/* CHECKOUT NOT EMPTY CART */}
+				{cartItems.length < 1 
+				?
 				<div className='checkout-empty'>
 					<h1 className='checkout-h1'>Cart Items</h1>
 					<p className='checkout-p'>Your shopping cart is currently empty. Let's put our best foot forward and find it some friends!</p>
 				</div>
-				
-				{/* CHECKOUT NOT EMPTY CART */}
+				:
 				<div className='checkout-cart-container'>
-					<h1 className='checkout-h1'>Products</h1>
-					{props.cartItems.map(item => 
-					<table className='checkout-table'>
-						<tr className='checkout-table-row'>
-							<td className='checkout-table-cell table-img'><img src={item.image} alt={item.title} width='20%'/></td>
-							<td className='checkout-table-cell'><p>{item.title}</p></td>
-							<td className='checkout-table-cell'>
-								<button onClick={decrementCount}>-</button>
-								{count}
-								<button onClick={incrementCount}>+</button>
-							</td>
-							<td className='checkout-table-cell'><p>{item.price} SEK</p></td>
-							<tfoot className='checkout-table-foot'>Total Price: {props.sum} SEK</tfoot>
-						</tr>
-					</table>
+					<h1>Products</h1>
+					{cartItems.map(item => 
+					<div className='cart-wrapper' key={item.id}>
+						<div className='cart-box box-1'>
+							<img className='box-1-img' src={item.image} alt={item.title} width='80%'/>
+						</div>
+						<div className='cart-box box-2'>
+							<p>{item.title}</p>
+						</div>
+						<div className='cart-box box-3'>
+							<p>{item.price} SEK</p>
+						</div>
+						<div className='cart-box box-4'>
+							<button onClick={decrementCount}>-</button>
+							{count}
+							<button onClick={incrementCount}>+</button>
+						</div>
+						<div className='cart-box box-4'>
+							<button className='remove-btn' onClick={() => deleteCartItem(item)}>Remove</button>
+						</div>
+					</div> 
 					)}
+					<p>Total Price: {props.checkoutTotal} SEK</p>
 				</div>
-
-				{/* <h1 className='checkout-h1'>Products</h1>
-				<table className='checkout-table'>
-					<tbody className='checkout-table-body'>
-						<tr className='checkout-table-row'>
-							<td className='checkout-table-cell table-img table-col'>
-								{props.cartItems.map(item => 
-								<div><img src={item.image} alt={item.title} width='100%'/></div>
-								)}
-							</td>
-							<td className='checkout-table-cell table-col'>
-								{props.cartItems.map(item => <p>{item.title}</p>)}
-							</td>
-							<td className='checkout-table-cell table-col'>
-								{props.cartItems.map(item =>
-								<div>
-									<button onClick={decrementCount}>-</button>
-									{count}
-									<button onClick={incrementCount}>+</button>
-								</div>
-								)}
-							</td>
-							<td className='checkout-table-cell table-col'>
-								{props.cartItems.map(item =>  <p>{item.price} SEK</p>)}
-							</td>
-							<td className='checkout-table-cell table-col'>
-								{props.cartItems.map(item => <button className='remove-btn'>Remove</button>)}
-							</td>
-						</tr>
-					</tbody>
-					<tfoot className='checkout-table-foot'>Total Price: {props.sum} SEK</tfoot>
-				</table> */}
+				}	
 			</div>
+
 			{/* CHECKOUT FORM */}
 			<div className='checkout-aside-form'>
 			<h1 className='checkout-h1 checkout-header'>Shipping Details</h1>
