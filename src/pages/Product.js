@@ -34,7 +34,7 @@ function Product(props) {
         const newItem = 
         {
             id: Math.random() * 1000000,
-            // id: product.id,
+            // id: product.id, ACTUAL ID BUT NEED TO GROUP IF > 1
             image: product.url, 
             title: product.title, 
             price: product.price, 
@@ -45,13 +45,13 @@ function Product(props) {
     }
 
      //==========Qty==========
-     const [quantity, setQuantity] = useState(undefined)
-     const updateProduct = (product) => {
-         product = Object.assign(
-             {},
-             {...product}, 
-             {quantity: quantity + 1})
-     }
+    //  const [quantity, setQuantity] = useState(undefined)
+    //  const updateProduct = (product) => {
+    //      product = Object.assign(
+    //          {},
+    //          {...product}, 
+    //          {quantity: quantity + 1})
+    //  }
 
   return (
     <div> 

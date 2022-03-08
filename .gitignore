@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+./components/Header.css
+./components/Header.js
+./pages/Homepage.js
+./pages/products.js
