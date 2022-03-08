@@ -1,17 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import { useState } from "react";
 import { TextField } from "@material-ui/core";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
+import ShoppingCart from "./ShoppingCart";
 
-function Header() {
-  const [value, setValue] = useState("");
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
+function Header({ addToCart, items, deleteFromCart, setItems, sum, setSum, quantity, setQuantity}) {
   return (
     <div className="header">
       <ul className="navbar">
@@ -22,10 +17,9 @@ function Header() {
             label="Search for Products"
             variant="outlined"
             size="small"
-            onChange={handleChange}
             InputProps={{
               endAdornment: (
-                <InputAdornment position='start'>
+                <InputAdornment position="start">
                   <button className="header-search-btn">
                     {" "}
                     <SearchIcon />
@@ -43,8 +37,18 @@ function Header() {
           {" "}
           <h2 className="hover">Products</h2>{" "}
         </Link>
+
         <h2 className="hover">Cart</h2>
       </ul>
+      <ShoppingCart
+        addToCart={addToCart}
+        items={items}
+        deleteFromCart={deleteFromCart}
+        setItems={setItems} 
+        sum={sum} 
+        setSum={setSum}
+        quantity={quantity}
+      />
     </div>
   );
 }
