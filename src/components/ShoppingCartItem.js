@@ -1,4 +1,5 @@
 import React from "react";
+import Product from "./Pages/Product";
 import './ShoppingCart.css'
 
 function ShoppingCartItem({cart, deleteFromCart}) { 
@@ -17,7 +18,7 @@ function ShoppingCartItem({cart, deleteFromCart}) {
         <button className="removeBtn" onClick={handleDeleteBtn}>Remove</button>
       </div>
       <div>
-        <img src={cart.image} width="150px" height="150px" /> 
+        <img src={cart.image} alt={cart.title} width="150px" height="150px" /> 
       </div>
     </div>
   );

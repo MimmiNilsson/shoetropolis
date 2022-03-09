@@ -8,7 +8,7 @@ const handleClick = (e) => {
   const newItem = 
   {title: prod.title, 
     price: prod.price, 
-    image:prod.url, 
+    image: prod.url, 
     // id: Math.random() * 1000000,
     id: prod.id,
     desc: prod.description}             
