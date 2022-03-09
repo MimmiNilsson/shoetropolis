@@ -57,8 +57,8 @@ function Product(props) {
   return (
     <div> 
         <div className='sing-prod-header'>
-            <Link to='/products'><button className='sing-prod-header-btn btn-1'>Products <RiArrowGoBackLine /></button></Link>
-            <Link to='/checkout'><button className='sing-prod-header-btn btn-2'>Checkout <BsArrowRightCircle /></button></Link>
+            <Link className='sing-prod-header-btn' to='/products'><button className='sing-prod-header-btn btn-1'>Products <RiArrowGoBackLine /></button></Link>
+            <Link className='sing-prod-header-btns' to='/checkout'><button className='sing-prod-header-btn btn-2'>Checkout <BsArrowRightCircle /></button></Link>
         </div>
         <div className='sing-prod-container' key={product.id}>
             <motion.div 

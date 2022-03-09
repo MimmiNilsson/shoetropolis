@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     total();
   }, [items]);
-  
+
   useEffect(() => {
     qty();
   }, [items]);
@@ -51,6 +51,7 @@ function App() {
     let remove = items.filter((item) => item.id !== id);
     setItems(remove);
   };
+
 
   return (
     <AppContext.Provider value = 
