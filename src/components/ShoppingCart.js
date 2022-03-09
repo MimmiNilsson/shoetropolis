@@ -1,6 +1,7 @@
 import React from "react";
 import "./ShoppingCart.css";
 import ShoppingCartItem from "./ShoppingCartItem";
+import {Link} from 'react-router-dom'
 
 
 export default function ShoppingCart({ items, deleteFromCart, sum, quantity, open, setOpen }) {
@@ -8,10 +9,13 @@ export default function ShoppingCart({ items, deleteFromCart, sum, quantity, ope
 
   return (
     <div className={`cart-container ${ open && 'open' }`}>
-      ShoppingCart
-      <button onClick={() => setOpen(!open)}>x</button>
+      <div className="modal">
+      <button className="cartBtn" onClick={() => setOpen(!open)}>Close</button>
       <p>items: {quantity}</p>
       <p>Total Price: {sum} </p>
+      <Link to='/checkout'><button className="cartBtnCheckout">Checkout</button></Link>
+      </div>
+      <div>
       {items.map((cart) => (
         <ShoppingCartItem
           sum={sum} 
@@ -20,6 +24,7 @@ export default function ShoppingCart({ items, deleteFromCart, sum, quantity, ope
           deleteFromCart={deleteFromCart}
         />
       ))}
+      </div>
     </div>
   );
 }

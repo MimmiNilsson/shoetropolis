@@ -22,9 +22,12 @@
 }
 .singleProducts:hover {
     opacity: 0.9;
-    background-color: blanchedalmond;
+    background-color: #ffd700;
 }
-
+.desc {
+  text-decoration: underline;
+  margin-bottom: 5px;
+} 
 
 .btn {
 

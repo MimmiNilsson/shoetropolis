@@ -5,17 +5,11 @@ import { TextField } from "@material-ui/core";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCart from "./ShoppingCart";
-import { motion } from "framer-motion"
 
 function Header({ addToCart, items, deleteFromCart, setItems, sum, setSum, quantity}) {
 
   const [open, setOpen] = useState(false)
-
-  const variants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 1, x: "-100%" },
-  }
-
+   
   return (
     <div className="header">
       <ul className="navbar">
@@ -47,12 +41,11 @@ function Header({ addToCart, items, deleteFromCart, setItems, sum, setSum, quant
           <h2 className="hover">Products</h2>{" "}
         </Link>
 
-        <motion.h2
-         animate={open ? "open" : "closed"}
-         variants={variants}
-          onClick={() => {setOpen(true)}}>
-          Cart     
-         </motion.h2> 
+      
+         <h2 className="cart" onClick={() => {setOpen(true)}}>
+          Cart 
+          </h2>  
+         
       </ul>
       <ShoppingCart
         addToCart={addToCart}
