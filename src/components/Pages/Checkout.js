@@ -12,7 +12,6 @@ import { AppContext } from '../../App';
 function Checkout(props) { 
 
 	const{items, setItems} = useContext(AppContext)
-
 	// const {setCartItems, cartItems} = useContext(AppContext)
 
 	//==========CHECKOUT CART==========
