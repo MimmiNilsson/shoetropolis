@@ -21,6 +21,7 @@ function App() {
   useEffect(() => {
     total();
   }, [items]);
+  
   useEffect(() => {
     qty();
   }, [items]);
@@ -52,13 +53,13 @@ function App() {
   };
 
   return (
-    <AppContext.Provider value = {{
-
+    <AppContext.Provider value = 
+    {
+      {
       setItems,
-      
       items
-      
-      }}>
+      }
+    }>
     <div className="App">
       <BrowserRouter>
         <Header
