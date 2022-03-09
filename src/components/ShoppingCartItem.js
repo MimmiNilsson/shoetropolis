@@ -17,7 +17,7 @@ function ShoppingCartItem({cart, deleteFromCart}) {
         <button className="removeBtn" onClick={handleDeleteBtn}>Remove</button>
       </div>
       <div>
-        <img src={cart.img} width="150px" height="150px" /> 
+        <img src={cart.image} width="150px" height="150px" /> 
       </div>
     </div>
   );
