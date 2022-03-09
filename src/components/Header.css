@@ -27,7 +27,6 @@
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  background-color: rgb(250, 237, 237);
 }
 
 .input-div {
@@ -43,9 +42,7 @@
   position: absolute;
   left: 15px;
 }
-#outlined-basic {
-  background-color: rgb(250, 237, 237);
-}
+
 .cart:hover {
   cursor: pointer;
   text-decoration: underline;

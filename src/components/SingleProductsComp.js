@@ -21,7 +21,7 @@ const handleClick = (e) => {
     <img className='img' alt='Shoe' src={prod.url} width='150px'/>
     <p><b>{prod.price} Kr</b></p>
     <p><b>In stock {prod.storage}</b></p>
-    <Link to={`/Product${prod.id}`}><p>Description</p> </Link> 
+    <Link to={`/Product${prod.id}`}><p className='desc'><b>Description</b></p> </Link> 
     <button className='btn' onClick={handleClick} > Add to cart </button>
     </div>
   )

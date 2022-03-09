@@ -24,7 +24,10 @@
     opacity: 0.9;
     background-color: #ffd700;
 }
-
+.desc {
+  text-decoration: underline;
+  margin-bottom: 5px;
+} 
 
 .btn {
 
