@@ -1,14 +1,49 @@
 .checkout-msg-container {
-    border: 2px solid yellowgreen;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    width: 50%;
+    width: 80%;
+    height: 75vh;
     margin: auto;
-    padding: 5%;
+    margin-bottom: 1rem;
+    background-image: url(/assets/box.jpg);
+    border-radius: 5px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
 }
 
 .checkout-msg-wrap {
-    border: 2px soil orange;
-    align-items: center;
+    text-align: center;
+    width: 50%;
+    margin-top: 33vh;
+    color: #fff;
+}
+
+.checkout-msg-h2 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.checkout-msg-p {
+    padding: 5px;
+}
+
+.checkout-msg-return-btn {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #fff;
+}
+
+.checkout-msg-return-btn:hover {
+    background-color: black;
+    color: #fff;
+}
+
+.checkout-msg-return-btn:focus {
+    background-color: #fff; 
+    color: black;
 }

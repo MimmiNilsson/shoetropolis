@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Product from "./components/Pages/Product";
 import Checkout from "./components/Pages/Checkout";
 import CheckoutMsg from "./components/Pages/CheckoutMsg";
+
 export const AppContext = createContext();
 
 function App() {

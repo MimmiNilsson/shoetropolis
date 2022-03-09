@@ -1,5 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+/*==========RETURN AND CHECKOUT BTNS==========*/
+.sing-prod-header {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sing-prod-header-btn {
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
+    background-color: #c4c4c4;
+    opacity: 0.5;
+    color: #fff;
+    text-transform: uppercase;
+    border: 0;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+}
+
+.sing-prod-header-btn:hover {
+    background-color: #b0b0b0;
+    color: black;
+}
+
+.btn-1, .btn-2 {
+    width: 100%;
+}
+
+.btn-1 {
+    padding-left: 30vw;
+    /* padding-right: 5rem; */
+}
+
+.btn-2 {
+    padding-right: 30vw;
+    /* padding-left: 5rem; */
+}
+
+/*==========SING PROD PAGE==========*/
 .sing-prod-container {
     display: flex;
     flex-direction: row;
@@ -44,56 +85,32 @@
     height: 50vh;
 }
 
-
-.sing-prod-btn {
-    color: black;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-    font-size: 1rem;
-}
-
-.add-btn {
-    width: 60%;
-    padding: 5px;
-    cursor: pointer;
-    text-transform: uppercase;
-    border: 0;
-    background-color: #c4c4c4;
-    color: #fff;
-    box-shadow: 
-    0 1px 3px rgba(0, 0, 0, 0.12), 
-    0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.return-btn {
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    background-color: #c4c4c4;
-    color: #fff;
-    text-transform: uppercase;
-    border: 0;
-    font-size: 1rem;
-    margin: 10px 0 30px;
-    padding: 10px;
-    box-shadow: 
-    0 1px 3px rgba(0, 0, 0, 0.12), 
-    0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.add-btn:hover, .return-btn:hover {
-    background-color: #dedede;
-    color: black;
-}
-
-.add-btn:focus, .return-btn:focus {
-    background-color: #c4c4c4; 
-    color: white;
-}
-
-.return-btn {
-    width: 100%;
+/*==========SING PROD ADD TO CART BTN==========*/
+.sing-prod-add-btn {
+    width: 80%;
     padding: 10px;
     cursor: pointer;
     text-transform: uppercase;
+    font-size: 1.2rem;
+    border: none;
+    background-color: black;
+    color: #fff;
 }
+
+.sing-prod-add-btn:hover {
+    background-color: #ffd700;
+    color: black;
+}
+
+.sing-prod-add-btn:focus {
+    background-color: black; 
+    color: #fff;
+}
+
+
+
+
+
+
+
 
