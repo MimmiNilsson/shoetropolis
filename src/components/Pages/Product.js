@@ -34,8 +34,8 @@ function Product(props) {
     const handleAddBtn = () => {
         const newItem = 
         {
-            id: Math.random() * 1000000,
-            // id: product.id, ACTUAL ID BUT NEED TO GROUP IF > 1
+            // id: Math.random() * 1000000,
+            id: product.id,
             image: product.url, 
             title: product.title, 
             price: product.price, 

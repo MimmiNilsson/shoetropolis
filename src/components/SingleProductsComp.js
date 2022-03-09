@@ -9,8 +9,8 @@ const handleClick = (e) => {
   {title: prod.title, 
     price: prod.price, 
     img:prod.url, 
-    id: Math.random() * 1000000,
-            // id: prod.id, ACTUAL ID BUT NEED TO GROUP IF > 1
+    // id: Math.random() * 1000000,
+    id: prod.id,
     desc: prod.description}             
   addToCart(newItem)
 } 
