@@ -1,4 +1,5 @@
 import React from "react";
+import './ShoppingCart.css'
 
 function ShoppingCartItem({cart, deleteFromCart}) { 
 
@@ -9,14 +10,14 @@ function ShoppingCartItem({cart, deleteFromCart}) {
     }
 
   return (
-    <div>
+    <div className="cart-items">
       <div key={cart.id} className="shopCart">
         <p>{cart.title}</p>
         <p>{cart.price}</p>
+        <button className="removeBtn" onClick={handleDeleteBtn}>Remove</button>
+      </div>
+      <div>
         <img src={cart.img} width="150px" height="150px" /> 
-        <button>+</button> 
-        <button>-</button>
-        <button onClick={handleDeleteBtn}>Remove from cart</button>
       </div>
     </div>
   );

@@ -91,7 +91,7 @@ function Checkout(props) {
 						</div>
 					</div> 
 					)}
-					<p>Total Price: {props.checkoutTotal} SEK</p>
+					<p>Total Price: {props.sum} SEK</p>
 				</div>
 				}	
 			</div>
