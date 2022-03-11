@@ -58,8 +58,8 @@ function Product(props) {
   return (
     <div> 
         <div className='sing-prod-header'>
-            <Link className='sing-prod-header-btn' to='/products'><button className='sing-prod-header-btn btn-1'>Products <RiArrowGoBackLine /></button></Link>
-            <Link className='sing-prod-header-btns' to='/checkout'><button className='sing-prod-header-btn btn-2'>Checkout <BsArrowRightCircle /></button></Link>
+            <Link className='prod-upper-btn-link' to='/products'><button className='prod-upper-btn btn-1'>Products <RiArrowGoBackLine /></button></Link>
+            <Link className='prod-upper-btn-link' to='/checkout'><button className='prod-upper-btn btn-2'>Checkout <BsArrowRightCircle /></button></Link>
         </div>
         <div className='sing-prod-container' key={product.id}>
             <motion.div 
@@ -95,10 +95,17 @@ function Product(props) {
                     <h1 className='sing-prod-h1'>{product.title}</h1>
                     <p className='sing-prod-p'>{product.price} SEK</p>
                     <p className='sing-prod-p'>Qty: <input className='sing-prod-input' type='number'></input></p>
-                    <AddBtn className='sing-prod-add-btn' onClick={handleAddBtn}>Add to Cart</AddBtn>
+                    <motion.div
+                    whileHover= {{
+                        scale: 1
+                       }} 
+                       whileTap= {{
+                         scale: 0.95
+                       }}>
+                        <AddBtn className='sing-prod-add-btn' onClick={handleAddBtn}>Add to Cart</AddBtn>
+                    </motion.div>
                     <p className='sing-prod-p'>In Stock: {product.storage}</p>
                     <p className='sing-prod-p'>{product.description}</p>
-                    
             </motion.div>
         </div>
     </div>
@@ -119,14 +126,8 @@ const AddBtn = styled.button `
     position: relative;
     user-select: none;
     touch-action: manipulation;
-    &:active {
-            box-shadow: 0px 0px 0px 0px;
-            top: 5px;
-            left: 5px;
     }
   `;
-
-
 
 
 export default Product;

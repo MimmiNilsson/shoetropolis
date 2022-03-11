@@ -1,3 +1,4 @@
+/*==========CHECKOUT PAGE==========*/
 .checkout-msg-container {
     display: flex;
     flex-flow: row wrap;
@@ -12,8 +13,6 @@
     background-position: right bottom;
     background-repeat: no-repeat;
 }
-
-
 
 /*==========MOVED TO CHECKOUTMSG.JS AS STYLED COMPONENTS==========*/
 /* .checkout-msg-wrap {

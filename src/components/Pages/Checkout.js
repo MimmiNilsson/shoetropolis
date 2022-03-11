@@ -8,6 +8,7 @@ import {RiArrowGoBackLine} from 'react-icons/ri';
 import {TiDelete} from 'react-icons/ti';
 import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai';
 import styled from 'styled-components';
+import {motion} from 'framer-motion';
 import {AppContext} from '../../App';
 import './Checkout.css';
 
@@ -65,11 +66,27 @@ function Checkout(props) {
 				<div className='checkout-empty'>
 					<h1 className='checkout-h1 empty-cart-h1'>Cart Items</h1>
 					<p className='checkout-p empty-cart-p'>Your shopping cart is currently empty. Let's put our best foot forward and find it some friends!</p>
-					<Link to='/products'><button className='empty-cart-return-btn'>Back to Products</button></Link>
+					<motion.div
+						whileHover= {{
+						scale: 1.05
+					   }} 
+						whileTap= {{
+						 scale: 0.95
+					   }}>
+						<Link to='/products'><button className='empty-cart-return-btn'>Back to Products</button></Link>
+					</motion.div>
 				</div>
 				:
 				<div>
-					<Link to='/products'><button className='checkout-btn return-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
+					<motion.div
+					 	whileHover= {{
+						scale: 1.05
+					   }} 
+						whileTap= {{
+						 scale: 0.95
+					   }}>
+						<Link to='/products'><button className='checkout-btn'>Back to Products <RiArrowGoBackLine /></button></Link>
+					</motion.div>
 					<div className='checkout-cart-container'>
 					<h1 className='checkout-h1 not-empty-cart-h1'>Products</h1>
 					{items.map(item => 
@@ -131,9 +148,16 @@ function Checkout(props) {
 					
 					<label className='checkout-form-label'>Comment</label>
 					<textarea className='checkout-form-input textarea-input' name="comment" value={user.comment} onChange={handleChange}></textarea>
-					{/* <h2>{JSON.stringify(user)}</h2> */}
 				</form>
-				<Link to='/checkoutmsg'><button className='checkout-order-btn'>Place Order</button></Link>
+				<motion.div
+					whileHover= {{
+					scale: 1.05
+				   }} 
+					whileTap= {{
+					 scale: 0.95
+				   }}>
+					<Link to='/checkoutmsg'><button className='checkout-btn'>Place Order</button></Link>
+				</motion.div>
 			</Aside>
 		</Container>
 	</div>

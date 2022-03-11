@@ -73,7 +73,6 @@ function App() {
           quantity={quantity}
           setQuantity={setQuantity}
         />
-
         <Routes>
           <Route path="/Products" element={<Products addToCart={addToCart} />} ></Route>
           <Route path="/Product:id" element={<Product addToCart={addToCart} items={items} />} ></Route>

@@ -8,36 +8,40 @@
     justify-content: space-between;
 }
 
-.sing-prod-header-btn {
+.prod-upper-btn {
+    display: block;
     width: 100%;
-    align-items: center;
     cursor: pointer;
     background-color: #c4c4c4;
-    opacity: 0.5;
     color: #fff;
     text-transform: uppercase;
     border: 0;
     font-size: 1.2rem;
-    padding: 0.3rem;
+    margin: 10px 0 30px;
+    padding: 10px;
+    box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.12), 
+    0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.sing-prod-header-btn:hover {
-    background-color: #b0b0b0;
+.prod-upper-btn:hover {
+    background-color: #dedede;
     color: black;
 }
 
-.btn-1, .btn-2 {
-    width: 100%;
+.prod-upper-btn:focus {
+    background-color: #c4c4c4; 
+    color: white;
 }
 
 .btn-1 {
-    padding-left: 30vw;
-    /* padding-right: 5rem; */
+    padding-left: 39vw;
+    border-right: 1px solid black;
 }
 
 .btn-2 {
-    padding-right: 30vw;
-    /* padding-left: 5rem; */
+    padding-right: 40vw;
+    border-left: 1px solid black;
 }
 
 /*==========SING PROD PAGE==========*/
@@ -61,12 +65,9 @@
     font-size: 1rem;
     padding: 5px;
     margin: 1rem;
-    /* margin: 5px; */
 }
 
 .sing-prod-input {
-    /* border: none; */
-    /* box-shadow: 0 5px 5px -5px #333; */
     height: 1.2rem;
 }
 
@@ -85,7 +86,7 @@
     height: 50vh;
 }
 
-/*==========SING PROD ADD TO CART BTN==========*/
+/*==========ADD BTN MOVED TO PRODUCT.JS AS STYLED COMPONENT (also changed in appearance to match Products.js)==========*/
 /* .sing-prod-add-btn {
     width: 80%;
     padding: 10px;
