@@ -1,5 +1,7 @@
 /*==========CHECKOUT PAGE==========*/
-.checkout-container {
+
+/*==========MOVED TO CHECKOUT.JS AS STYLED COMPONENTS==========*/
+/* .checkout-container {
     display: flex;
     flex-flow: row wrap;
     width: 80%;
@@ -9,15 +11,14 @@
     justify-content: center;
     background-color: #fff;
     padding-top: 10px;
-}
+} */
 
-.checkout-main-cart {
+/* .checkout-main-cart {
     width: 60%;
     padding: 0.75rem 2rem 2rem 2rem;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     margin-bottom: 2rem;
-    /* border: 2px solid green; */
-}
+} */
 
 .checkout-h1 {
     text-transform: uppercase;
@@ -118,12 +119,15 @@
 }
 
 /*==========CHECKOUT FORM==========*/
-.checkout-aside-form {
+
+/*==========MOVED TO CHECKOUT.JS AS STYLED COMPONENTS==========*/
+/* .checkout-aside-form {
     width: 40%;
     padding: 0.75rem 2rem 2rem 2rem;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     margin-bottom: 2rem;
-}
+} */
+
 .checkout-form-input[type='text'], .checkout-form-input[type='select'], textarea {
     display: block;
     width: 90%;

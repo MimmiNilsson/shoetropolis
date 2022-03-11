@@ -5,8 +5,9 @@
 import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {RiArrowGoBackLine} from 'react-icons/ri';
-import {TiDelete} from 'react-icons/ti'
-import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai'
+import {TiDelete} from 'react-icons/ti';
+import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai';
+import styled from 'styled-components';
 import {AppContext} from '../../App';
 import './Checkout.css';
 
@@ -56,8 +57,8 @@ function Checkout(props) {
 
   return (
 	<div>
-		<div className='checkout-container'>
-			<div className='checkout-main-cart'>
+		<Container className='checkout-container'>
+			<Main className='checkout-main-cart'>
 				{/* CHECKOUT EMPTY CART */} {/* CHECKOUT NOT EMPTY CART */}
 				{items.length < 1 
 				?
@@ -96,10 +97,10 @@ function Checkout(props) {
 				</div>
 				</div>
 				}	
-			</div>
+			</Main>
 
 			{/* CHECKOUT FORM */}
-			<div className='checkout-aside-form'>
+			<Aside className='checkout-aside-form'>
 			<h1 className='checkout-h1 checkout-header'>Shipping Details</h1>
 				<form className='checkout-form'>
 					<label className='checkout-form-label'>First Name</label>
@@ -133,9 +134,37 @@ function Checkout(props) {
 					{/* <h2>{JSON.stringify(user)}</h2> */}
 				</form>
 				<Link to='/checkoutmsg'><button className='checkout-order-btn'>Place Order</button></Link>
-			</div>
-		</div>
+			</Aside>
+		</Container>
 	</div>
   )}
+
+  const Container = styled.div `
+  	display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: #fff;
+    padding-top: 20px;
+  `;
+
+  const Main = styled.div `
+	width: 60%;
+	padding: 0.75rem 2rem 2rem 2rem;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	margin-bottom: 2rem;
+  `;
+
+  const Aside = styled.div `
+	width: 40%;
+	padding: 0.75rem 2rem 2rem 2rem;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	margin-bottom: 2rem;
+  `;
+
+  
 
 export default Checkout;

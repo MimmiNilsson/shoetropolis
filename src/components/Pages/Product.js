@@ -5,8 +5,9 @@
 import React, {useState, useEffect} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import {RiArrowGoBackLine} from 'react-icons/ri';
-import {BsArrowRightCircle} from 'react-icons/bs'
+import {BsArrowRightCircle} from 'react-icons/bs';
 import {motion} from 'framer-motion';
+import styled from 'styled-components';
 import './Product.css';
 
 function Product(props) {
@@ -94,7 +95,7 @@ function Product(props) {
                     <h1 className='sing-prod-h1'>{product.title}</h1>
                     <p className='sing-prod-p'>{product.price} SEK</p>
                     <p className='sing-prod-p'>Qty: <input className='sing-prod-input' type='number'></input></p>
-                    <button className='sing-prod-add-btn' onClick={handleAddBtn}>Add to Cart</button>
+                    <AddBtn className='sing-prod-add-btn' onClick={handleAddBtn}>Add to Cart</AddBtn>
                     <p className='sing-prod-p'>In Stock: {product.storage}</p>
                     <p className='sing-prod-p'>{product.description}</p>
                     
@@ -104,7 +105,27 @@ function Product(props) {
   )
 }
 
-// {cartItems, sum, handleOnClick, addToCart}
+const AddBtn = styled.button `
+    width: 80%;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    touch-action: manipulation;
+    &:active {
+            box-shadow: 0px 0px 0px 0px;
+            top: 5px;
+            left: 5px;
+    }
+  `;
+
 
 
 

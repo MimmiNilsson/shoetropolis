@@ -4,6 +4,7 @@ import "./Header.css";
 import { TextField } from "@material-ui/core";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
+import styled from 'styled-components';
 import ShoppingCart from "./ShoppingCart";
 
 function Header({ addToCart, items, deleteFromCart, setItems, sum, setSum, quantity}) {
@@ -13,7 +14,7 @@ function Header({ addToCart, items, deleteFromCart, setItems, sum, setSum, quant
   return (
     <div className="header">
       <ul className="navbar">
-        <h1>ShoeTropoliZ</h1>
+        <StoreName>Shoetropolis</StoreName>
         <div>
           <TextField
             id="outlined-basic"
@@ -61,5 +62,13 @@ function Header({ addToCart, items, deleteFromCart, setItems, sum, setSum, quant
     </div>
   );
 }
+
+const StoreName = styled.h1 `
+  color: #fff;
+  text-shadow: #eee 1px 0 10px;
+  font-size: 2rem;
+  margin: .5rem;  
+`;
+
 
 export default Header;

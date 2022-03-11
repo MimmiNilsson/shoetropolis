@@ -86,7 +86,7 @@
 }
 
 /*==========SING PROD ADD TO CART BTN==========*/
-.sing-prod-add-btn {
+/* .sing-prod-add-btn {
     width: 80%;
     padding: 10px;
     cursor: pointer;
@@ -95,9 +95,9 @@
     border: none;
     background-color: black;
     color: #fff;
-}
+} */
 
-.sing-prod-add-btn:hover {
+/* .sing-prod-add-btn:hover {
     background-color: #ffd700;
     color: black;
 }
@@ -105,7 +105,7 @@
 .sing-prod-add-btn:focus {
     background-color: black; 
     color: #fff;
-}
+} */
 
 
 
